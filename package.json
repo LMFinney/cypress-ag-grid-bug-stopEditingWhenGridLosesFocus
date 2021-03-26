@@ -29,6 +29,9 @@
   },
   "private": true,
   "dependencies": {
+    "@ag-grid-community/angular": "25.1.0",
+    "@ag-grid-community/client-side-row-model": "25.1.0",
+    "@ag-grid-community/core": "25.1.0",
     "@angular/animations": "^11.2.0",
     "@angular/common": "^11.2.0",
     "@angular/compiler": "^11.2.0",
