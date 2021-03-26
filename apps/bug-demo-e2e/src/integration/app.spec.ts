@@ -1,13 +1,22 @@
-import { getGreeting } from '../support/app.po';
+import { assertGridValues, setModel, setPrice } from '../support/app.po';
 
 describe('bug-demo', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should show and change values', () => {
+    assertGridValues([
+      { make: 'Toyota', model: 'Celica', price: '35000' },
+      { make: 'Ford', model: 'Mondeo', price: '32000' },
+      { make: 'Porsche', model: 'Boxter', price: '72000' }
+    ]);
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to bug-demo!');
+    setModel(0, 'Prius');
+    setPrice(1, '12345');
+
+    assertGridValues([
+      { make: 'Toyota', model: 'Prius', price: '35000' },
+      { make: 'Ford', model: 'Mondeo', price: '12345' },
+      { make: 'Porsche', model: 'Boxter', price: '72000' }
+    ]);
   });
 });
