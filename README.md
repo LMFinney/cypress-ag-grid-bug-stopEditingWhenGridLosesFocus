@@ -30,7 +30,7 @@ The bug does not manifest under these conditions:
 * Initial execution
 * After hitting the replay button
 * On Firefox 86 (I have not tested other browsers)
-* With the stopEditingWhenGridLosesFocus flag
+* Without the stopEditingWhenGridLosesFocus flag
 
 This seems to be the same general problem that was reported in
 https://github.com/cypress-io/cypress/issues/5394, but that was apparently
